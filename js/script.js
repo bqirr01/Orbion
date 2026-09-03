@@ -37,6 +37,12 @@
     });
   }
 
+
+  /* ---- FAQ rows (independent toggle) ---------------------------------- */
+  document.querySelectorAll(".qarow__head, .qa__head").forEach(function (h) {
+    h.addEventListener("click", function () { h.parentElement.classList.toggle("is-open"); });
+  });
+
   /* ---- Services accordion --------------------------------------------- */
   var accItems = document.querySelectorAll(".acc");
   accItems.forEach(function (item) {
