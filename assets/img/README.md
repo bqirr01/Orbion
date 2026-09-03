@@ -48,3 +48,23 @@ Figma versions, export them as SVG and tell me — I'll swap them in:
 
 ---
 After adding the files, just refresh the page (or re-deploy). No code changes needed.
+
+## Sub-page images (About / Service / Testimonial / Pricing / Blog / Contact)
+Same rule — drop a JPG with the exact name and it loads automatically.
+
+| Filename | Page · where |
+|---|---|
+| `about-vision.jpg` | About · Vision photo |
+| `staff-1.jpg` … `staff-3.jpg` | About & Contact · team members |
+| `service-team.jpg` | Service · Creative Approach photo |
+| `service-websites.jpg` | Service & Home · "Websites" laptop |
+| `tst-hero.jpg` | Testimonial · header portrait |
+| `tst-adam.jpg` | Testimonial · feedback portrait |
+| `contact-team.jpg` | Contact · form photo |
+| `contact-office.jpg` | Contact · map background |
+| `blog-feature.jpg` | Blog · featured hero |
+| `blog-1.jpg` … `blog-9.jpg` | Blog · article thumbnails |
+| `blog-hl.jpg` | Blog · highlighted article photo |
+
+Every page also falls back to a stock photo, then a brand gradient, so the
+layout is never broken while assets are being added.
