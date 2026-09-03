@@ -126,6 +126,18 @@
     });
   }
 
+
+  /* ---- Contact chips -------------------------------------------------- */
+  document.querySelectorAll(".chipgroup").forEach(function (group) {
+    var single = group.classList.contains("chipgroup--single");
+    group.querySelectorAll(".chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        if (single) group.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); });
+        chip.classList.toggle("is-active");
+      });
+    });
+  });
+
   /* ---- Newsletter (demo only) ----------------------------------------- */
   var form = document.querySelector(".footer__input");
   if (form) {
