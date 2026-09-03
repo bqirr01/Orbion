@@ -107,6 +107,25 @@
     stage.addEventListener("mouseenter", function () { clearInterval(timer); });
   }
 
+  /* ---- Pricing billing toggle ----------------------------------------- */
+  var billing = document.querySelector(".billing");
+  if (billing) {
+    billing.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        billing.querySelectorAll("button").forEach(function (x) { x.classList.remove("is-active"); });
+        b.classList.add("is-active");
+        var yearly = b.dataset.mode === "yearly";
+        document.querySelectorAll(".plan__price .amt").forEach(function (a) {
+          var v = yearly ? a.dataset.y : a.dataset.m;
+          if (v) a.childNodes[0].nodeValue = v;
+        });
+        document.querySelectorAll(".plan__per").forEach(function (p) {
+          p.textContent = yearly ? "Per year" : "Per month";
+        });
+      });
+    });
+  }
+
   /* ---- Newsletter (demo only) ----------------------------------------- */
   var form = document.querySelector(".footer__input");
   if (form) {

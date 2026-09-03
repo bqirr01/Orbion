@@ -850,3 +850,81 @@ section, .nav { position: relative; }
   .feedback-art { transform: scale(.82); }
   .authorline { flex-wrap: wrap; gap: 12px; }
 }
+
+/* ===== Pricing page ===== */
+.pricing { padding: 80px var(--gutter) 90px; background: var(--warmth-white); text-align: center; }
+.pricing__head { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.pricing__head h2 { margin: 0; color: var(--black); }
+.pricing__head p { margin: 0; }
+.billing { display: inline-flex; align-items: center; gap: 4px; background: var(--warmth-white); border: 1px solid var(--light-gray); border-radius: 60px; padding: 6px; margin: 8px auto 0; }
+.billing button { padding: 12px 24px; border-radius: 40px; font-weight: 500; font-size: 15px; color: var(--dark-gray); display: inline-flex; align-items: center; gap: 8px; }
+.billing button.is-active { background: var(--grad-red); color: #fff; }
+.billing button.is-active::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-top: 56px; text-align: left; align-items: start; }
+.plan { border: 1px solid var(--light-cream); border-radius: 28px; padding: 32px; position: relative; }
+.plan--pro { border: 2px solid var(--ruby-rush); }
+.plan__ic { position: absolute; right: 28px; top: 32px; width: 52px; height: 52px; border-radius: 50%; background: var(--black); display: grid; place-items: center; color: #fff; }
+.plan--pro .plan__ic { background: var(--jade-ocean); }
+.plan h3 { margin: 0 0 20px; font-weight: 500; font-size: 24px; letter-spacing: -.4px; }
+.plan__price { display: flex; align-items: baseline; gap: 10px; }
+.plan__price .amt { font-weight: 500; font-size: 52px; letter-spacing: -2px; line-height: 1; }
+.plan__price .amt sup { font-size: 22px; top: -1.1em; }
+.plan__price .old { color: var(--medium-gray); text-decoration: line-through; font-size: 18px; }
+.plan__per { color: var(--dark-gray); font-size: 15px; margin: 6px 0 0; }
+.plan__desc { margin: 18px 0 24px; font-size: 14px; line-height: 1.4; color: var(--dark-gray); }
+.plan h4 { margin: 0 0 16px; font-weight: 500; font-size: 16px; }
+.plan__feats { display: flex; flex-direction: column; gap: 10px; }
+.plan__feats li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--light-cream); border-radius: 14px; font-size: 14px; color: var(--dark-gray); }
+.plan--pro .plan__feats li { border: none; padding: 10px 0; }
+.plan__feats li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ruby-rush); flex: none; }
+.plan__btn { display: none; }
+.plan--pro .plan__btn { display: flex; width: 100%; justify-content: center; margin-top: 24px; }
+
+/* Brand growth (dark band, reuse tst stat cards) */
+.brandgrow { background: var(--black); color: var(--warmth-white); padding: 90px var(--gutter); display: flex; flex-direction: column; align-items: center; gap: 48px; }
+.brandgrow h2 { margin: 0; text-align: center; color: var(--warmth-white); max-width: 720px; }
+
+/* Facilities comparison table */
+.facilities { padding: 100px var(--gutter); background: var(--light-cream); }
+.facilities h2 { margin: 0 0 40px; color: var(--black); max-width: 420px; }
+.factable-wrap { overflow-x: auto; }
+.factable { width: 100%; min-width: 760px; border-collapse: separate; border-spacing: 0; }
+.factable th, .factable td { padding: 16px 20px; text-align: center; vertical-align: middle; }
+.factable th:first-child, .factable td:first-child { text-align: left; width: 40%; }
+.factable thead th { padding-top: 28px; padding-bottom: 28px; }
+.factable thead .pname { font-weight: 500; font-size: 18px; }
+.factable thead .pprice { font-weight: 500; font-size: 36px; letter-spacing: -1.5px; }
+.factable thead .pprice sup { font-size: 16px; top: -1em; }
+.factable .cat td { color: var(--ruby-rush); font-weight: 500; font-size: 15px; text-align: left; padding-top: 26px; }
+.factable tbody td:first-child { font-size: 16px; color: var(--black); }
+.factable .mk { width: 30px; height: 30px; border-radius: 50%; display: inline-grid; place-items: center; }
+.factable .mk--y { background: rgba(0,0,0,.06); color: var(--black); }
+.factable .mk--n { background: rgba(0,0,0,.06); color: var(--medium-gray); }
+/* Highlight Starter column (2nd) as a dark card */
+.factable th:nth-child(2), .factable td:nth-child(2) { background: var(--black); color: var(--warmth-white); }
+.factable td:nth-child(2) .mk--y { background: rgba(255,255,255,.14); color: #fff; }
+.factable td:nth-child(2) .mk--n { background: rgba(255,255,255,.1); color: var(--medium-gray); }
+.factable thead th:nth-child(2) { border-radius: 28px 28px 0 0; }
+.factable tbody tr:last-child td:nth-child(2) { border-radius: 0 0 28px 28px; }
+.factable .startbtn { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; font-size: 15px; }
+.factable .startbtn svg { width: 20px; height: 20px; }
+.factable tbody tr:last-child td { padding: 26px 20px; }
+
+/* CTA band */
+.ctaband { padding: 40px var(--gutter) 90px; }
+.ctaband__inner { background: var(--light-cream); border-radius: 42px; padding: 64px; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+.ctaband__left h2 { margin: 0; color: var(--black); }
+.ctaband__left p { margin: 16px 0 0; font-size: 16px; color: var(--dark-gray); }
+.ctaband__right { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.ctaband__right h4 { margin: 0; font-weight: 500; font-size: 20px; max-width: 320px; }
+
+@media (max-width: 1024px) {
+  .plans { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .plan__btn, .plan--pro .plan__btn { display: flex; width: 100%; justify-content: center; margin-top: 24px; }
+  .ctaband__inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 760px) {
+  .pricing, .facilities, .brandgrow { padding: 64px 20px; }
+  .ctaband { padding: 24px 20px 64px; }
+  .ctaband__inner { padding: 40px 24px; }
+}
