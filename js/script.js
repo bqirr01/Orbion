@@ -20,6 +20,23 @@
     });
   });
 
+  /* ---- Mobile / tablet nav (hamburger) -------------------------------- */
+  var nav = document.querySelector(".nav");
+  var burger = document.querySelector(".nav__burger");
+  if (nav && burger) {
+    burger.addEventListener("click", function () {
+      var open = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    nav.querySelectorAll(".nav__links a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        nav.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   /* ---- Services accordion --------------------------------------------- */
   var accItems = document.querySelectorAll(".acc");
   accItems.forEach(function (item) {
