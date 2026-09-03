@@ -136,8 +136,8 @@ section, .nav { position: relative; }
   padding: 42px var(--gutter) 0;
   background: var(--warmth-white);
 }
-.brand { display: inline-flex; align-items: baseline; font-weight: 600; font-size: 38px; letter-spacing: -1.14px; color: var(--ruby-rush); }
-.brand .brand__mark { width: 30px; height: 32px; margin-right: 2px; }
+.brand { display: inline-flex; align-items: center; font-weight: 700; font-size: 38px; letter-spacing: -1.5px; color: var(--ruby-rush); }
+.brand__o { width: .74em; height: .74em; margin: 0 -.015em; position: relative; top: .06em; flex: none; }
 .nav__links { display: flex; align-items: center; }
 .nav__links a {
   padding: 13px 20px;
@@ -532,7 +532,6 @@ section, .nav { position: relative; }
   /* Nav bar fits logo + CTA + burger on one row */
   .nav { padding-top: 24px; }
   .brand { font-size: 30px; }
-  .brand .brand__mark { width: 26px; height: 28px; }
   .nav__right { gap: 8px; }
   .nav__cta { height: 48px; padding: 0 16px; font-size: 15px; white-space: nowrap; }
   .nav__cta svg { width: 20px; height: 20px; }
