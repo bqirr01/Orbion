@@ -496,3 +496,18 @@ section, .nav { position: relative; }
   .work, .services, .tst { padding-left: 20px; padding-right: 20px; }
   .hero__art { transform: scale(.62); height: 460px; }
 }
+
+/* =========================================================================
+   Figma "Subtract" carved notches — concave cut-outs where floating pills
+   sit inside an image card (creative buttons, featured article tags).
+   Masks are authored at the desktop design size and scaled to fit.
+   ========================================================================= */
+.creative__img { -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271290%27%20height%3D%27700%27%20viewBox%3D%270%200%201290%20700%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20fill%3D%27white%27%20fill-rule%3D%27evenodd%27%20d%3D%27M42%2C0%20H1248%20A42%2C42%200%200%201%201290%2C42%20V658%20A42%2C42%200%200%201%201248%2C700%20H42%20A42%2C42%200%200%201%200%2C658%20V42%20A42%2C42%200%200%201%2042%2C0%20Z%20M34%2C586%20H444%20A42%2C42%200%200%201%20486%2C628%20V666%20A34%2C34%200%200%201%20452%2C700%20H42%20A42%2C42%200%200%201%200%2C658%20V620%20A34%2C34%200%200%201%2034%2C586%20Z%27%2F%3E%3C%2Fsvg%3E");mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271290%27%20height%3D%27700%27%20viewBox%3D%270%200%201290%20700%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20fill%3D%27white%27%20fill-rule%3D%27evenodd%27%20d%3D%27M42%2C0%20H1248%20A42%2C42%200%200%201%201290%2C42%20V658%20A42%2C42%200%200%201%201248%2C700%20H42%20A42%2C42%200%200%201%200%2C658%20V42%20A42%2C42%200%200%201%2042%2C0%20Z%20M34%2C586%20H444%20A42%2C42%200%200%201%20486%2C628%20V666%20A34%2C34%200%200%201%20452%2C700%20H42%20A42%2C42%200%200%201%200%2C658%20V620%20A34%2C34%200%200%201%2034%2C586%20Z%27%2F%3E%3C%2Fsvg%3E"); -webkit-mask-size:100% 100%; mask-size:100% 100%; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; }
+.creative__img::after { border-radius:0; }
+.creative__actions { left:26px; bottom:24px; }
+
+.article-card--cut .ph { -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27409%27%20height%3D%27347%27%20viewBox%3D%270%200%20409%20347%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20fill%3D%27white%27%20fill-rule%3D%27evenodd%27%20d%3D%27M24%2C0%20H385%20A24%2C24%200%200%201%20409%2C24%20V323%20A24%2C24%200%200%201%20385%2C347%20H24%20A24%2C24%200%200%201%200%2C323%20V24%20A24%2C24%200%200%201%2024%2C0%20Z%20M26%2C285%20H270%20A30%2C30%200%200%201%20300%2C315%20V323%20A24%2C24%200%200%201%20276%2C347%20H24%20A24%2C24%200%200%201%200%2C323%20V311%20A26%2C26%200%200%201%2026%2C285%20Z%27%2F%3E%3C%2Fsvg%3E");mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27409%27%20height%3D%27347%27%20viewBox%3D%270%200%20409%20347%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20fill%3D%27white%27%20fill-rule%3D%27evenodd%27%20d%3D%27M24%2C0%20H385%20A24%2C24%200%200%201%20409%2C24%20V323%20A24%2C24%200%200%201%20385%2C347%20H24%20A24%2C24%200%200%201%200%2C323%20V24%20A24%2C24%200%200%201%2024%2C0%20Z%20M26%2C285%20H270%20A30%2C30%200%200%201%20300%2C315%20V323%20A24%2C24%200%200%201%20276%2C347%20H24%20A24%2C24%200%200%201%200%2C323%20V311%20A26%2C26%200%200%201%2026%2C285%20Z%27%2F%3E%3C%2Fsvg%3E"); -webkit-mask-size:100% 100%; mask-size:100% 100%; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; }
+
+@media (max-width:980px) {
+  .creative__img, .article-card--cut .ph { -webkit-mask:none; mask:none; }
+}
