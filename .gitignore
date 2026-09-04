@@ -5,3 +5,4 @@ package.json
 .DS_Store
 _shot*.js
 _diag.js
+_*.js
