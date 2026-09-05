@@ -20,6 +20,43 @@
     });
   });
 
+  /* ---- Scroll reveal animations --------------------------------------- */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    document.body.classList.add("anim");
+    // Whole-block fade-ups
+    var singles = ".hero__text,.hero__art,.pagehead__left,.pagehead__right,.about__text,.about__art," +
+      ".split__text,.split__media,.services__intro,.tst__head,.faq__head,.process__head,.bloghero," +
+      ".creative__card,.ctaband__inner,.contact__left,.contact__form,.map,.pricing__head,.billing," +
+      ".footer__card,.blogsec__head,.faqx>.pagehead__row";
+    document.querySelectorAll(singles).forEach(function (el) { el.setAttribute("data-reveal", ""); });
+    // Staggered groups (cards / rows animate in one after another)
+    var groups = ".cards,.plans,.staff__grid,.tst__stats,.tst__grid,.articles__grid,.blogcards," +
+      ".work__col,.services__list,.faqx__list,.faq__list,.logos__track";
+    document.querySelectorAll(groups).forEach(function (group) {
+      Array.prototype.forEach.call(group.children, function (child, i) {
+        child.setAttribute("data-reveal", "");
+        child.style.setProperty("--d", Math.min(i * 0.08, 0.5) + "s");
+      });
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+    window.__revealIO = io; // used by the single-file preview router to re-reveal on route change
+  }
+
+  /* ---- Nav shadow on scroll ------------------------------------------- */
+  var navEl = document.querySelector(".nav");
+  if (navEl) {
+    var onScroll = function () { navEl.classList.toggle("scrolled", window.scrollY > 12); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   /* ---- Mobile / tablet nav (hamburger) -------------------------------- */
   var nav = document.querySelector(".nav");
   var burger = document.querySelector(".nav__burger");
